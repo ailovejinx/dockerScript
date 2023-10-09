@@ -7,8 +7,9 @@ docker run --gpus '"device=0,1,2,3,4,5,6,7"' -p $port:22 --name $name -v /data_n
 
 # 让container在docker服务启动时自动启动
 docker update --restart=always $name
+docker stop $name
 
 # 启动指定container
 docker start $name
-docker exec -it $name bash
+# docker exec -it $name bash
 
